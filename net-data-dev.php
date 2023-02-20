@@ -15,10 +15,16 @@ curl_setopt_array($curl, [
 
 ]);
 
-$dhash = curl_exec($curl);
-$err = curl_error($curl);
+$nethash = curl_exec($curl);
 
-curl_close($curl);
+$clean_string = str_replace('"', '', $nethash);
+$float_number = $clean_string;
+$rounded_number = round($float_number, 2);
+$dhash = $rounded_number;
+
+$err = curl_error($curl1);
+
+curl_close($curl1);
 
 if ($err) {
 	echo "cURL Error #:" . $err;
@@ -41,7 +47,13 @@ curl_setopt_array($curl, [
 
 ]);
 
-$difficulty = curl_exec($curl);
+$net_diff = curl_exec($curl);
+$clean_string = str_replace('"', '', $net_diff);
+$float_number = $clean_string;
+$rounded_number = round($float_number, 2);
+
+$difficulty = $rounded_number;
+
 $err = curl_error($curl);
 
 curl_close($curl);
@@ -67,10 +79,16 @@ curl_setopt_array($curl, [
 
 ]);
 
-$csupply = curl_exec($curl);
-$err = curl_error($curl);
+$supply = curl_exec($curl);
 
-curl_close($curl);
+$clean_string = str_replace('"', '', $supply);
+$float_number = $clean_string;
+$csupply = round($float_number, 0);
+
+
+$err = curl_error($curl3);
+
+curl_close($curl3);
 
 if ($err) {
 	echo "cURL Error #:" . $err;
