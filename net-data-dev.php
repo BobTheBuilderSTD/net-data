@@ -19,7 +19,7 @@ $nethash = curl_exec($curl);
 
 $clean_string = str_replace('"', '', $nethash);
 $float_number = $clean_string;
-$rounded_number = round($float_number, 2);
+$rounded_number = round($float_number, 0);
 $dhash = $rounded_number;
 
 $err = curl_error($curl1);
