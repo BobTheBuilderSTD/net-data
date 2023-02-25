@@ -20,8 +20,8 @@ $nethash = curl_exec($curl);
 $clean_string = str_replace('"', '', $nethash);
 $float_number = $clean_string;
 
-$magahash = $float_number; // evalue in megahash
-$terahash = $magahash / 1000000000; // convert megahash to gigahash
+$magahash = $float_number; 
+$terahash = $magahash / 1000000000; 
 
 
 $err = curl_error($curl);
